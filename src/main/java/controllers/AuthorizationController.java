@@ -37,7 +37,7 @@ public class AuthorizationController {
         signInBut.setText(commandManager.getLocaleManager().localize("signIn"));
     }
 
-    public void execute(ActionEvent event) throws IOException {
+    public void execute() throws IOException {
         if (!nameFld.getText().equals("") && !passwordFld.getText().equals("")) {
             if (registerCheck.isSelected()) {
                 String result = commandManager.getHelper().run(nameFld.getText(), passwordFld.getText(), true);

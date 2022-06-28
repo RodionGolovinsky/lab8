@@ -162,7 +162,7 @@ public class MainApplicationController {
         }
     }
 
-    public void logout(ActionEvent event) throws IOException {
+    public void logout() throws IOException {
         commandManager.setUser(null);
         commandManager.getHelper().setUser(null);
         loadStage("Authorization", null);
@@ -170,7 +170,7 @@ public class MainApplicationController {
         cur.close();
     }
 
-    public void confirm(ActionEvent event) throws IOException {
+    public void confirm() throws IOException {
         String result = "";
         Person person;
         switch (activeCommand) {
@@ -199,13 +199,13 @@ public class MainApplicationController {
         activeCommand = null;
     }
 
-    public void remove(ActionEvent event) throws IOException {
+    public void remove() throws IOException {
         String result = commandManager.execute("remove_by_id", idFld.getText(), null);
         loadStage("Result", result);
         clearFields();
     }
 
-    public void update(ActionEvent event) throws IOException {
+    public void update() throws IOException {
         Person p = commandManager.getQap().parsePerson(idFld.getText(), nameFld.getText(), xFld.getText(), yFld.getText(),
                 heightFld.getText(), eyeBox.getValue(), hairBox.getValue(), nationBox.getValue(),
                 locXFld.getText(), locYFld.getText(), locZFld.getText(), locNameFld.getText());
@@ -218,7 +218,7 @@ public class MainApplicationController {
         loadStage("Result", result);
     }
 
-    public void filter(ActionEvent event) {
+    public void filter() {
         if (filterFld.getText().equals("")) fillTableAndMap();
         else {
             LinkedHashSet<Person> filtered = collectionManager.filter(filterBox.getValue(), filterFld.getText());
