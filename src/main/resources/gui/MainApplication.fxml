@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="707.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="976.0">
+        <menus>
+          <Menu fx:id="userMenu" mnemonicParsing="false" text="User">
+               <items>
+              <MenuItem fx:id="logoutItm" mnemonicParsing="false" onAction="#logout" text="logout" />
+               </items>
+          </Menu>
+          <Menu fx:id="commandsMenu" mnemonicParsing="false" text="Commands">
+            <items>
+              <MenuItem fx:id="addItm" mnemonicParsing="false" onAction="#withArgExecute" text="add" />
+                  <MenuItem fx:id="addIfMinItm" mnemonicParsing="false" onAction="#withArgExecute" text="add_if_min" />
+                  <MenuItem fx:id="clearItm" mnemonicParsing="false" onAction="#noArgExecute" text="clear" />
+                  <MenuItem fx:id="filterStartsItm" mnemonicParsing="false" onAction="#withArgExecute" text="filter_starts_with_name" />
+                  <MenuItem fx:id="groupCountingItm" mnemonicParsing="false" onAction="#noArgExecute" text="group_counting_by_id" />
+                  <MenuItem fx:id="printUniqueItm" mnemonicParsing="false" onAction="#noArgExecute" text="print_unique_location" />
+                  <MenuItem fx:id="removeGreaterItm" mnemonicParsing="false" onAction="#withArgExecute" text="remove_greater" />
+                  <MenuItem fx:id="removeLowerItm" mnemonicParsing="false" onAction="#withArgExecute" text="remove_lower" />
+            </items>
+          </Menu>
+          <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="helpItm" mnemonicParsing="false" onAction="#noArgExecute" text="help" />
+                  <MenuItem fx:id="infoItm" mnemonicParsing="false" onAction="#noArgExecute" text="info" />
+                  <MenuItem fx:id="scriptItm" mnemonicParsing="false" onAction="#withArgExecute" text="execute_script" />
+            </items>
+          </Menu>
+            <Menu fx:id="langMenu" mnemonicParsing="false" text="Language">
+               <items>
+                  <RadioMenuItem fx:id="ruItm" mnemonicParsing="false" text="ru">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="langs" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem fx:id="rsItm" mnemonicParsing="false" text="rs" toggleGroup="$langs" />
+                  <RadioMenuItem fx:id="huItm" mnemonicParsing="false" text="hu" toggleGroup="$langs" />
+                  <RadioMenuItem fx:id="enItm" mnemonicParsing="false" text="en_CA" toggleGroup="$langs" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <ScrollPane layoutY="27.0" prefHeight="241.0" prefWidth="976.0">
+         <content>
+            <TableView fx:id="personTable" prefHeight="232.0" prefWidth="976.0">
+              <columns>
+                <TableColumn fx:id="idCol" prefWidth="43.199983179569244" text="id" />
+                <TableColumn fx:id="nameCol" prefWidth="61.599971771240234" text="name" />
+                  <TableColumn prefWidth="196.8000259399414" text="coordinates">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="x" fx:id="xCol" />
+                        <TableColumn fx:id="yCol" prefWidth="75.0" text="y" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="heightCol" prefWidth="53.5999755859375" text="height" />
+                  <TableColumn fx:id="dateCol" prefWidth="60.00006103515625" text="creation date" />
+                  <TableColumn fx:id="eyeCol" prefWidth="62.39996337890625" text="eye color" />
+                  <TableColumn fx:id="hairCol" prefWidth="65.60006713867188" text="hair color" />
+                  <TableColumn fx:id="nationCol" prefWidth="82.39996337890625" text="nationality" />
+                  <TableColumn prefWidth="299.2000732421875" text="location">
+                     <columns>
+                        <TableColumn fx:id="locXCol" prefWidth="75.0" text="x" />
+                        <TableColumn fx:id="locYCol" prefWidth="75.0" text="y" />
+                        <TableColumn fx:id="locZCol" prefWidth="75.0" text="z" />
+                        <TableColumn fx:id="locNameCol" prefWidth="75.0" text="name" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="ownerCol" prefWidth="88.7999267578125" text="owner" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <HBox layoutY="269.0" prefHeight="438.0" prefWidth="976.0">
+         <children>
+            <Canvas fx:id="canvas" height="439.0" width="446.0" />
+            <VBox prefHeight="200.0" prefWidth="265.0">
+               <children>
+                  <TextField fx:id="filterFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="50.0" top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label prefHeight="19.0" prefWidth="184.0" text="id:">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="idFld" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="coordinates x:" />
+                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="double; &lt;= 935" fx:id="xFld" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="height:" />
+                  <TextField fx:id="heightFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="200.0" promptText="int; &gt;= 0" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="eye color:" />
+                  <ChoiceBox fx:id="eyeBox" prefHeight="26.0" prefWidth="200.0" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="nationality:" />
+                  <ChoiceBox fx:id="nationBox" prefHeight="26.0" prefWidth="200.0" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="location y:" />
+                  <TextField fx:id="locYFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="double" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="location name:" />
+                  <TextField fx:id="locNameFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <Button fx:id="removeBut" mnemonicParsing="false" onAction="#remove" text="remove" />
+                        <Button fx:id="updateBut" mnemonicParsing="false" onAction="#update" text="update" />
+                     </children>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="265.0">
+               <children>
+                  <HBox prefHeight="26.0" prefWidth="266.0" spacing="20.0">
+                     <children>
+                        <ChoiceBox fx:id="filterBox" prefWidth="150.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ChoiceBox>
+                        <Button fx:id="filterBut" mnemonicParsing="false" onAction="#filter" text="filter">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </HBox>
+                  <Label prefHeight="19.0" prefWidth="184.0" text="name:">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="nameFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="coordinates y:" />
+                  <TextField fx:id="yFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="long; &gt;= -815" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="creation date:" />
+                  <TextField fx:id="dateFld" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="200.0" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="hair color:" />
+                  <ChoiceBox fx:id="hairBox" prefHeight="26.0" prefWidth="200.0" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="location x:" />
+                  <TextField fx:id="locXFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Double" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="location z:" />
+                  <TextField fx:id="locZFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Long" />
+                  <Label prefHeight="19.0" prefWidth="184.0" text="owner:" />
+                  <TextField fx:id="ownerFld" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                  <Button fx:id="okBut" mnemonicParsing="false" onAction="#confirm" prefHeight="26.0" prefWidth="66.0" text="ok">
+                     <VBox.margin>
+                        <Insets left="130.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
