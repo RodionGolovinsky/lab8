@@ -5,12 +5,15 @@ import databaseWorkers.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import utility.CollectionManager;
 import utility.CommandManager;
 import utility.QuestionAboutPerson;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class Proga extends Application {
@@ -33,16 +36,6 @@ public class Proga extends Application {
             QuestionAboutPerson questionAboutPerson = new QuestionAboutPerson(userScanner);
             CommandManager commandManager = new CommandManager(collectionManager, questionAboutPerson, helper);
             loadStage(collectionManager, commandManager);
-//            while (true) {
-//                System.out.println("Введите команду");
-//                String arguments;
-//                String[] commandNameAndArguments = userScanner.nextLine().split(" ");
-//                String commandName = commandNameAndArguments[0];
-//                if (commandNameAndArguments.length > 1) {
-//                    arguments = commandNameAndArguments[1];
-//                } else arguments = "";
-//                commandManager.execute(commandName, arguments);
-//            }
         } catch (RuntimeException e) {
             e.printStackTrace();
             System.out.println("Произошла катастрофа.");
@@ -52,10 +45,13 @@ public class Proga extends Application {
     private void loadStage(CollectionManager collectionManager, CommandManager commandManager) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../gui/Authorization.fxml"));
+        InputStream icon = getClass().getResourceAsStream("/icon.png");
+        Image iconImage = new Image(icon);
         loader.setController(new AuthorizationController(collectionManager, commandManager));
         loader.load();
         Stage stage = new Stage();
         stage.setTitle("Authorization");
+        stage.getIcons().add(iconImage);
         stage.setScene(new Scene(loader.getRoot(), stage.getWidth(), stage.getHeight()));
         stage.setResizable(false);
         stage.show();
