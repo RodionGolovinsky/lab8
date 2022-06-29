@@ -12,8 +12,8 @@
 
 <AnchorPane prefHeight="378.0" prefWidth="558.0" styleClass="secondary-color" stylesheets="@../darkTheme.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="nameFld" layoutX="167.0" layoutY="103.0" prefHeight="30.0" prefWidth="224.0" promptText="username" style="-fx-background-color: #383838;" />
-      <PasswordField fx:id="passwordFld" layoutX="167.0" layoutY="158.0" prefHeight="30.0" prefWidth="224.0" promptText="password" style="-fx-background-color: #383838;" />
+      <TextField fx:id="nameFld" layoutX="167.0" layoutY="103.0" prefHeight="30.0" prefWidth="224.0" promptText="username" style="-fx-background-color: #383838; -fx-text-fill: #ffffff;" />
+      <PasswordField fx:id="passwordFld" layoutX="167.0" layoutY="158.0" prefHeight="30.0" prefWidth="224.0" promptText="password" style="-fx-background-color: #383838; -fx-text-fill: #ffffff;" />
       <CheckBox fx:id="registerCheck" layoutX="167.0" layoutY="218.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="155.0" text="register" textFill="#b1aaa2">
          <font>
             <Font size="13.0" />
