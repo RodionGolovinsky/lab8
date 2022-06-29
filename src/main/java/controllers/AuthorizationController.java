@@ -4,11 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import utility.CollectionManager;
 import utility.CommandManager;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class AuthorizationController {
 
@@ -63,6 +66,9 @@ public class AuthorizationController {
         loader.setController(new MainApplicationController(collectionManager, commandManager));
         loader.load();
         Stage stage = new Stage();
+        InputStream icon = getClass().getResourceAsStream("/icon.png");
+        Image iconImage = new Image(icon);
+        stage.getIcons().add(iconImage);
         stage.setTitle("Lab 8");
         stage.setScene(new Scene(loader.getRoot(), stage.getWidth(), stage.getHeight()));
         stage.setResizable(false);
