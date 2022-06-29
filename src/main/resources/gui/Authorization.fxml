@@ -5,28 +5,34 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="378.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="378.0" prefWidth="558.0" styleClass="secondary-color" stylesheets="@../darkTheme.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="nameFld" layoutX="167.0" layoutY="59.0" prefHeight="30.0" prefWidth="224.0" promptText="username" />
-      <PasswordField fx:id="passwordFld" layoutX="167.0" layoutY="158.0" prefHeight="30.0" prefWidth="224.0" promptText="password" />
-      <CheckBox fx:id="registerCheck" layoutX="167.0" layoutY="218.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="155.0" text="register">
+      <TextField fx:id="nameFld" layoutX="167.0" layoutY="103.0" prefHeight="30.0" prefWidth="224.0" promptText="username" style="-fx-background-color: #383838;" />
+      <PasswordField fx:id="passwordFld" layoutX="167.0" layoutY="158.0" prefHeight="30.0" prefWidth="224.0" promptText="password" style="-fx-background-color: #383838;" />
+      <CheckBox fx:id="registerCheck" layoutX="167.0" layoutY="218.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="155.0" text="register" textFill="#b1aaa2">
          <font>
             <Font size="13.0" />
          </font>
       </CheckBox>
-      <Button fx:id="signInBut" layoutX="253.0" layoutY="281.0" mnemonicParsing="false" onAction="#execute" text="sign in">
+      <Button fx:id="signInBut" layoutX="222.0" layoutY="267.0" mnemonicParsing="false" onAction="#execute" prefHeight="43.0" prefWidth="127.0" style="-fx-background-color: #B25410;" text="sign in" textFill="#e4d7d7">
          <font>
-            <Font size="13.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Label fx:id="resLbl" alignment="TOP_CENTER" layoutX="167.0" layoutY="98.0" prefHeight="50.0" prefWidth="224.0" textAlignment="CENTER" wrapText="true">
+      <Label fx:id="resLbl" alignment="TOP_CENTER" layoutX="167.0" layoutY="14.0" prefHeight="50.0" prefWidth="224.0" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="167.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../IMG_0492.JPG" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
