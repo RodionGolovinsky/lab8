@@ -1,5 +1,6 @@
 package main;
 
+import com.aquafx_project.AquaFx;
 import controllers.AuthorizationController;
 import databaseWorkers.*;
 import javafx.application.Application;
@@ -25,6 +26,7 @@ public class Proga extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
+            Application.setUserAgentStylesheet(STYLESHEET_CASPIAN);
             PropHelper.getProperties();
             DataBaseHandler dataBaseHandler = new DataBaseHandler(PropHelper.getHost(), Integer.parseInt(PropHelper.getPort()), PropHelper.getUser(), PropHelper.getPassword(), PropHelper.getBasename());
             Scanner userScanner = new Scanner(System.in);
