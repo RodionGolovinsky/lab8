@@ -1,8 +1,11 @@
 package controllers;
 
 import javafx.scene.control.ScrollPane;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import utility.CommandManager;
+
+import java.awt.*;
 
 public class ResultController {
 
@@ -19,6 +22,7 @@ public class ResultController {
     public void initialize() {
         Text text = new Text(commandManager.getLocaleManager().localize(result));
         text.wrappingWidthProperty().bind(resultPane.widthProperty());
+        text.setStyle("-fx-font: 30 arial;");
         resultPane.setContent(text);
     }
 

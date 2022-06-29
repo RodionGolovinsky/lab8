@@ -15,6 +15,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import utility.CollectionManager;
@@ -22,6 +23,7 @@ import utility.CommandManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.time.ZoneId;
@@ -277,6 +279,9 @@ public class MainApplicationController {
         else loader.setController(new AuthorizationController(collectionManager, commandManager));
         loader.load();
         Stage stage = new Stage();
+        InputStream icon = getClass().getResourceAsStream("/icon.png");
+        Image iconImage = new Image(icon);
+        stage.getIcons().add(iconImage);
         stage.setTitle(name);
         stage.setScene(new Scene(loader.getRoot(), stage.getWidth(), stage.getHeight()));
         stage.setResizable(false);
