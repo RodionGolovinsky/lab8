@@ -1,6 +1,5 @@
 package main;
 
-import com.aquafx_project.AquaFx;
 import controllers.AuthorizationController;
 import databaseWorkers.*;
 import javafx.application.Application;
