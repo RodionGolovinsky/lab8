@@ -3,8 +3,8 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="336.0" prefWidth="494.0" styleClass="primary-color" stylesheets="@darkTheme.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="336.0" prefWidth="494.0" styleClass="primary-color" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane fx:id="resultPane" layoutX="14.0" layoutY="14.0" prefHeight="304.0" prefWidth="466.0" style="-fx-border-radius: 40;" styleClass="button-color" stylesheets="@darkTheme.css" />
+      <ScrollPane fx:id="resultPane" layoutX="14.0" layoutY="14.0" prefHeight="304.0" prefWidth="466.0" style="-fx-border-radius: 40;" styleClass="primary-color" />
    </children>
 </AnchorPane>

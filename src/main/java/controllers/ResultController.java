@@ -22,7 +22,7 @@ public class ResultController {
     public void initialize() {
         Text text = new Text(commandManager.getLocaleManager().localize(result));
         text.wrappingWidthProperty().bind(resultPane.widthProperty());
-        text.setStyle("-fx-font: 30 arial;");
+        text.setStyle("-fx-font: 40 arial");
         resultPane.setContent(text);
     }
 

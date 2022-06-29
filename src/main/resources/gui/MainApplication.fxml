@@ -103,7 +103,7 @@
             <Canvas fx:id="canvas" height="439.0" styleClass="secondary-color" width="446.0" />
             <VBox prefHeight="200.0" prefWidth="265.0" styleClass="secondary-color" stylesheets="@darkTheme.css">
                <children>
-                  <TextField fx:id="filterFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" styleClass="primary-color" stylesheets="@darkTheme.css">
+                  <TextField fx:id="filterFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" style="-fx-text-fill: #ffffff;" styleClass="primary-color" stylesheets="@darkTheme.css">
                      <VBox.margin>
                         <Insets left="50.0" top="5.0" />
                      </VBox.margin>
@@ -119,9 +119,27 @@
                   <Label prefHeight="19.0" prefWidth="184.0" text="height:" textFill="WHITE" />
                   <TextField fx:id="heightFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="200.0" promptText="int; &gt;= 0" style="-fx-text-fill: #ffffff;" styleClass="primary-color" stylesheets="@darkTheme.css" />
                   <Label prefHeight="19.0" prefWidth="184.0" text="eye color:" textFill="WHITE" />
-                  <ChoiceBox fx:id="eyeBox" prefHeight="26.0" prefWidth="200.0" style="-fx-text-fill: #ffffff;" styleClass="primary-color" stylesheets="@darkTheme.css" />
+                  <ChoiceBox fx:id="eyeBox" prefHeight="26.0" prefWidth="200.0" style="-fx-text-fill: #ffffff;" stylesheets="@../choiceBox.css">
+                     <styleClass>
+                        <String fx:value="button-color" />
+                        <String fx:value="choice-box" />
+                        <String fx:value="context-menu" />
+                        <String fx:value="label" />
+                        <String fx:value="menu-item" />
+                        <String fx:value="primary-color" />
+                        <String fx:value="round-border" />
+                     </styleClass></ChoiceBox>
                   <Label prefHeight="19.0" prefWidth="184.0" text="nationality:" textFill="#fcfcfc" />
-                  <ChoiceBox fx:id="nationBox" prefHeight="26.0" prefWidth="200.0" style="-fx-text-fill: #ffffff;" styleClass="primary-color" stylesheets="@darkTheme.css" />
+                  <ChoiceBox fx:id="nationBox" prefHeight="26.0" prefWidth="200.0" stylesheets="@../choiceBox.css">
+                     <styleClass>
+                        <String fx:value="button-color" />
+                        <String fx:value="choice-box" />
+                        <String fx:value="context-menu" />
+                        <String fx:value="label" />
+                        <String fx:value="menu-item" />
+                        <String fx:value="primary-color" />
+                        <String fx:value="round-border" />
+                     </styleClass></ChoiceBox>
                   <Label prefHeight="19.0" prefWidth="184.0" text="location y:" textFill="WHITE" />
                   <TextField fx:id="locYFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="double" style="-fx-text-fill: #ffffff;" styleClass="primary-color" stylesheets="@darkTheme.css" />
                   <Label prefHeight="19.0" prefWidth="184.0" text="location name:" textFill="WHITE" />
@@ -141,10 +159,19 @@
                <children>
                   <HBox prefHeight="26.0" prefWidth="266.0" spacing="20.0">
                      <children>
-                        <ChoiceBox fx:id="filterBox" prefWidth="150.0" style="-fx-text-fill: #ffffff;" styleClass="primary-color" stylesheets="@darkTheme.css">
+                        <ChoiceBox fx:id="filterBox" prefWidth="150.0" stylesheets="@../choiceBox.css">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
+                           <styleClass>
+                              <String fx:value="primary-color" />
+                              <String fx:value="button-color" />
+                              <String fx:value="context-menu" />
+                              <String fx:value="label" />
+                              <String fx:value="menu-item" />
+                              <String fx:value="primary-color" />
+                              <String fx:value="round-border" />
+                           </styleClass>
                         </ChoiceBox>
                         <Button fx:id="filterBut" mnemonicParsing="false" onAction="#filter" styleClass="button-color" stylesheets="@darkTheme.css" text="filter">
                            <HBox.margin>
@@ -165,13 +192,22 @@
                   <Label prefHeight="19.0" prefWidth="184.0" text="coordinates y:" textFill="WHITE" />
                   <TextField fx:id="yFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="long; &gt;= -815" style="-fx-text-fill: #ffffff;" styleClass="primary-color" stylesheets="@darkTheme.css" />
                   <Label prefHeight="19.0" prefWidth="184.0" text="creation date:" textFill="WHITE" />
-                  <TextField fx:id="dateFld" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="200.0" style="-fx-text-fill: #ffffff;" />
+                  <TextField fx:id="dateFld" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="200.0" />
                   <Label prefHeight="19.0" prefWidth="184.0" text="hair color:" textFill="#fffdfd" />
-                  <ChoiceBox fx:id="hairBox" prefHeight="26.0" prefWidth="200.0" style="-fm-mark-color: #B25410;" styleClass="primary-color" stylesheets="@darkTheme.css" />
+                  <ChoiceBox fx:id="hairBox" prefHeight="26.0" prefWidth="200.0" stylesheets="@../choiceBox.css">
+                     <styleClass>
+                        <String fx:value="primary-color" />
+                        <String fx:value="button-color" />
+                        <String fx:value="context-menu" />
+                        <String fx:value="label" />
+                        <String fx:value="menu-item" />
+                        <String fx:value="primary-color" />
+                        <String fx:value="round-border" />
+                     </styleClass></ChoiceBox>
                   <Label prefHeight="19.0" prefWidth="184.0" text="location x:" textFill="WHITE" />
                   <TextField fx:id="locXFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Double" style="-fx-text-fill: #ffffff;" styleClass="primary-color" stylesheets="@darkTheme.css" />
                   <Label prefHeight="19.0" prefWidth="184.0" text="location z:" textFill="WHITE" />
-                  <TextField fx:id="locZFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Long" styleClass="primary-color" stylesheets="@darkTheme.css" />
+                  <TextField fx:id="locZFld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Long" style="-fx-text-fill: #ffffff;" styleClass="primary-color" stylesheets="@darkTheme.css" />
                   <Label prefHeight="19.0" prefWidth="184.0" text="owner:" textFill="#fff9f9" />
                   <TextField fx:id="ownerFld" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
                   <Button fx:id="okBut" mnemonicParsing="false" onAction="#confirm" prefHeight="8.0" prefWidth="49.0" style="-fx-background-color: black; -fx-border-color: #B25410;">
